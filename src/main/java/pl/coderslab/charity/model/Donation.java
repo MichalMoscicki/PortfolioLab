@@ -29,6 +29,7 @@ public class Donation {
     private String street;
     private String City;
     private String zipCode;
+    private  String phone;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;

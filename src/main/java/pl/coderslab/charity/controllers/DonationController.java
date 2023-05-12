@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Category;
+import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repositories.CategoryRepository;
 import pl.coderslab.charity.repositories.DonationRepository;
@@ -24,6 +25,8 @@ public class DonationController {
 
     @RequestMapping("/form")
     public String displayForm(Model model) {
+        Donation donation = new Donation();
+        model.addAttribute("donation", donation);
         List<Category> categories = categoryRepository.findAll();
         model.addAttribute("categories", categories);
         List<Institution> institutions = institutionRepository.findAll();

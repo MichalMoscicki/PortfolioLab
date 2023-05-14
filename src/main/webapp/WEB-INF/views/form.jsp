@@ -73,11 +73,9 @@
                             <form:checkbox
                                     name="categories"
                                     path="categories"
-                                    value="${category}"
-                            />
+                                    value="${category}"/>
                             <span class="checkbox"></span>
-                            <span class="description"
-                            >${category.name}</span>
+                            <span class="description">${category.name}</span>
                         </label>
                     </div>
                 </c:forEach>
@@ -93,7 +91,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input path="quantity" step="1" min="1" type="number"/>
+                        <form:input path="quantity" name ="quantity" step="1" min="1" type="number"/>
                     </label>
                 </div>
 
@@ -111,7 +109,7 @@
                 <c:forEach items="${institutions}" var="institution">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution"/>
+                            <form:radiobutton path="institution" name="institution"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
                   <div class="title">${institution.name}”</div>
@@ -137,22 +135,22 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input path="street" /> </label>
+                            <label> Ulica <form:input path="street" name="street"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <form:input path="city"/> </label>
+                            <label> Miasto <form:input path="city" name="city"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input path="zipCode" />
+                                Kod pocztowy <form:input path="zipCode" name="zipCode"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <form:input path="phone" />
+                                Numer telefonu <form:input path="phone" name="phone"/>
                             </label>
                         </div>
                     </div>
@@ -160,17 +158,17 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" path="pickUpDate"/> </label>
+                            <label> Data <form:input type="date" path="pickUpDate" name="pickUpDate"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" path="pickUpTime" /></label>
+                            <label> Godzina <form:input type="time" path="pickUpTime" name="pickUpTime"/></label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComment" rows="5"/>
+                                <form:textarea path="pickUpComment" rows="5" name="pickUpComment"/>
                             </label>
                         </div>
                     </div>

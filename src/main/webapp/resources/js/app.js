@@ -164,6 +164,29 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      const form = document.querySelector('form');
+
+      // const categories = document.querySelector('#categories');
+      // console.log(categories); jak to złapać?
+      const quantity = form.querySelector('#quantity');
+      console.log(quantity.value);
+      // const institution = form.querySelector('#institution');
+      // console.log(institution.value); jak to złapać?
+      const street = form.querySelector('#street');
+      console.log(street.value);
+      const city = form.querySelector('#city');
+      console.log(city.value);
+      const zipCode = form.querySelector('#zipCode');
+      console.log(zipCode.value);
+      const phone = form.querySelector('#phone');
+      console.log(phone.value);
+      const pickUpDate = form.querySelector('#pickUpDate');
+      console.log(pickUpDate.value);
+      const pickUpTime = form.querySelector('#pickUpTime');
+      console.log(pickUpTime.value);
+      const pickUpComment = form.querySelector('#pickUpComment');
+      console.log(pickUpComment.value);
     }
 
   }

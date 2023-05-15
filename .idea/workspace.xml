@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ab4d0d-c67d-47b1-935c-3db78a894d0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form-confirmation.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/DonationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/DonationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/app.js" afterDir="false" />
     </list>
@@ -94,7 +92,10 @@
       <workItem from="1683824532722" duration="73000" />
       <workItem from="1683824620857" duration="9997000" />
       <workItem from="1683873940435" duration="8047000" />
-      <workItem from="1684097819611" duration="1869000" />
+      <workItem from="1684097819611" duration="2009000" />
+      <workItem from="1684133478206" duration="5543000" />
+      <workItem from="1684152720819" duration="2092000" />
+      <workItem from="1684184494454" duration="3275000" />
     </task>
     <servers />
   </component>

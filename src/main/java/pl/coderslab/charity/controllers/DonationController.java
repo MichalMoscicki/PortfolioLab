@@ -11,6 +11,7 @@ import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repositories.CategoryRepository;
 import pl.coderslab.charity.repositories.DonationRepository;
 import pl.coderslab.charity.repositories.InstitutionRepository;
+import pl.coderslab.charity.service.DonationService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -20,12 +21,13 @@ public class DonationController {
 
     final private CategoryRepository categoryRepository;
     final private InstitutionRepository institutionRepository;
-    final private DonationRepository donationRepository;
+    final private DonationService donationService;
 
-    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository, DonationRepository donationRepository) {
+    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository,
+                              DonationService donationService) {
         this.categoryRepository = categoryRepository;
         this.institutionRepository = institutionRepository;
-        this.donationRepository = donationRepository;
+        this.donationService = donationService;
     }
 
     @GetMapping("/form")
@@ -45,7 +47,7 @@ public class DonationController {
         if(res.hasErrors()){
             return "form";
         }
-        donationRepository.save(donation);
+        donationService.saveDonation(donation);
         return "redirect:/form-confirmation";
     }
 

@@ -68,8 +68,6 @@
 
                 <%------------------TUTAJ COŚ NIE HALO! wyświetla suę ok, ale się nie klika----------------%>
 
-
-
                 <c:forEach items="${categories}" var="category">
                     <div class="form-group form-group--checkbox">
                         <label>
@@ -82,7 +80,7 @@
                     </div>
                 </c:forEach>
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="stepOneNextButton">Dalej</button>
                 </div>
             </div>
 
@@ -99,7 +97,7 @@
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="stepTwoNextButton">Dalej</button>
                 </div>
             </div>
 
@@ -125,7 +123,7 @@
                 </c:forEach>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="stepThreeNextButton">Dalej</button>
                 </div>
             </div>
 
@@ -177,7 +175,7 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="stepFourNextButton">Dalej</button>
                 </div>
             </div>
 

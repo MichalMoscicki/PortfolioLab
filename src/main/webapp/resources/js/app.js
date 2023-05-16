@@ -152,6 +152,61 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$step.innerText = this.currentStep;
 
             // TODO: Validation
+            //jeśli nic nie klikniknięte, nie można pójść dalej, przycisk powinien być niedostępny/cofać do kroku
+            //łapię sobie warunki, wypełnię je po konsultacji z sensei
+
+            const form = document.querySelector('form');
+            const quantity = form.querySelector('#quantity');
+            const categories = document.querySelectorAll('input[type="checkbox"]:checked');
+            const street = form.querySelector('#street');
+            const city = form.querySelector('#city');
+            const zipCode = form.querySelector('#zipCode');
+            const phone = form.querySelector('#phone');
+            const pickUpDate = form.querySelector('#pickUpDate');
+            const pickUpTime = form.querySelector('#pickUpTime');
+            const pickUpComment = form.querySelector('#pickUpComment');
+
+            //tu jakoś sprytniej trzeba to zrobić:
+            const stepOneNextButton = document.getElementById("stepOneNextButton");
+            if (categories.length === 0) {
+                // stepOneNextButton.disabled = "true";
+            } else {
+                // stepOneNextButton.disabled = "false";
+            }
+
+
+            const stepTwoNextButton = document.getElementById("stepTwoNextButton");
+            stepTwoNextButton.disabled = "true";
+            function checkStepTwo() {
+                if (quantity.value === "") {
+                    stepTwoNextButton.disabled = true;
+                } else {
+                    stepTwoNextButton.disabled = false;
+                }
+            }
+            quantity.addEventListener("change", checkStepTwo);
+
+            //tu również sprytnoiej - bez sensu pisać sześć takich samych funkcji!
+            const stepFourNextButton = document.getElementById("stepFourNextButton");
+            if (street.value !== "") {
+                console.log("Street: passed.")
+            }
+            if (city.value !== "") {
+                console.log("City: passed.")
+            }
+            if (zipCode.value !== "") {
+                console.log("ZipCode: passed.")
+            }
+            if (phone.value !== "") {
+                console.log("Phone: passed.")
+            }
+            if (pickUpDate.value !== "") {
+                console.log("PickUpDate: passed.")
+            }
+            if (pickUpTime.value !== "") {
+                console.log("PickUpTime: passed.")
+            }
+
 
             this.slides.forEach(slide => {
                 slide.classList.remove("active");
@@ -164,18 +219,16 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
-            // TODO: get data from inputs and show them in summary
+            /**
+             * Dynamic summary
+             */
 
-            const form = document.querySelector('form');
-
-            const quantity = form.querySelector('#quantity');
             const quantitySummary = document.getElementById("summary-bags");
             let bagOrBags = "worek";
             if (quantity.value > 1) {
                 bagOrBags = "worki";
             }
 
-            const categories = document.querySelectorAll('input[type="checkbox"]:checked');
             let categoriesNames = ""
             categories.forEach((e) => {
                 const categoryLabel = e.parentElement;
@@ -191,35 +244,28 @@ document.addEventListener("DOMContentLoaded", function () {
             const institutionSummary = document.getElementById("summary-institution");
             institutionSummary.innerText = "Dla fundacji " + institutionTitle.innerText;
 
-            const street = form.querySelector('#street');
+
             const streetSummary = document.getElementById("streetSummary");
             streetSummary.innerText = street.value;
 
-            const city = form.querySelector('#city');
             const citySummary = document.getElementById("citySummary");
             citySummary.innerText = city.value;
 
-            const zipCode = form.querySelector('#zipCode');
             const zipCodeSummary = document.getElementById("zipCodeSummary");
             zipCodeSummary.innerText = zipCode.value;
 
-            const phone = form.querySelector('#phone');
             const phoneSummary = document.getElementById("phoneSummary");
             phoneSummary.innerText = phone.value;
 
-            const pickUpDate = form.querySelector('#pickUpDate');
             const pickUpDateSummary = document.getElementById("pickUpDateSummary");
             pickUpDateSummary.innerText = pickUpDate.value;
 
-            const pickUpTime = form.querySelector('#pickUpTime');
             const pickUpTimeSummary = document.getElementById("pickUpTimeSummary");
             pickUpTimeSummary.innerText = pickUpTime.value;
 
-            const pickUpComment = form.querySelector('#pickUpComment');
             const pickUpCommentSummary = document.getElementById("pickUpCommentSummary");
             pickUpCommentSummary.innerText = pickUpComment.value;
         }
-
 
     }
 

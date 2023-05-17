@@ -173,6 +173,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 // stepOneNextButton.disabled = "false";
             }
+            //checked spr
+
+
+
 
 
             const stepTwoNextButton = document.getElementById("stepTwoNextButton");
@@ -186,26 +190,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             quantity.addEventListener("change", checkStepTwo);
 
-            //tu również sprytnoiej - bez sensu pisać sześć takich samych funkcji!
+
             const stepFourNextButton = document.getElementById("stepFourNextButton");
-            if (street.value !== "") {
-                console.log("Street: passed.")
+            const stepFourInputs = [street, city, zipCode, phone, pickUpDate, pickUpTime];
+            stepFourNextButton.disabled = true;
+
+            function checkStepFour(){
+                if(street.value === "" || city.value === "" || zipCode.value === "" || phone.value === ""
+                || pickUpDate.value === "" || pickUpTime.value === ""){
+                    stepFourNextButton.disabled = true;
+                } else {
+                    stepFourNextButton.disabled = false;
+                }
             }
-            if (city.value !== "") {
-                console.log("City: passed.")
-            }
-            if (zipCode.value !== "") {
-                console.log("ZipCode: passed.")
-            }
-            if (phone.value !== "") {
-                console.log("Phone: passed.")
-            }
-            if (pickUpDate.value !== "") {
-                console.log("PickUpDate: passed.")
-            }
-            if (pickUpTime.value !== "") {
-                console.log("PickUpTime: passed.")
-            }
+
+            stepFourInputs.forEach((e)=>{
+                e.addEventListener("change", checkStepFour)
+            })
 
 
             this.slides.forEach(slide => {

@@ -33,9 +33,9 @@ public class SecurityConfig {
         http.authorizeRequests()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/").authenticated()
-                .and().formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/");
+                .and().formLogin();
+//                .loginPage("/login")
+//                .defaultSuccessUrl("/");
 
         return http.build();
     }

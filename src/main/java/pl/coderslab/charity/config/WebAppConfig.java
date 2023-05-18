@@ -1,4 +1,4 @@
-package pl.coderslab.charity.service.config;
+package pl.coderslab.charity.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

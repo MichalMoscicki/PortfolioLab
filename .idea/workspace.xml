@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ab4d0d-c67d-47b1-935c-3db78a894d0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/config/WebAppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/SpringDataUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b5bb821-b9e0-49c2-bc03-91153e92af80.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b5bb821-b9e0-49c2-bc03-91153e92af80.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/service/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/charity/config/WebAppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -106,7 +110,7 @@
       <workItem from="1684268159087" duration="5481000" />
       <workItem from="1684315498132" duration="9392000" />
       <workItem from="1684325848893" duration="682000" />
-      <workItem from="1684398918539" duration="876000" />
+      <workItem from="1684398918539" duration="6413000" />
     </task>
     <servers />
   </component>

@@ -151,13 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
         updateForm() {
             this.$step.innerText = this.currentStep;
 
-            // TODO: Validation
-            //jeśli nic nie klikniknięte, nie można pójść dalej, przycisk powinien być niedostępny/cofać do kroku
-            //łapię sobie warunki, wypełnię je po konsultacji z sensei
-
             const form = document.querySelector('form');
             const quantity = form.querySelector('#quantity');
-            const categories = document.querySelectorAll('input[type="checkbox"]:checked');
+            const categories = document.querySelectorAll('input[type="checkbox"]');
             const street = form.querySelector('#street');
             const city = form.querySelector('#city');
             const zipCode = form.querySelector('#zipCode');
@@ -166,47 +162,60 @@ document.addEventListener("DOMContentLoaded", function () {
             const pickUpTime = form.querySelector('#pickUpTime');
             const pickUpComment = form.querySelector('#pickUpComment');
 
-            //tu jakoś sprytniej trzeba to zrobić:
+
             const stepOneNextButton = document.getElementById("stepOneNextButton");
-            if (categories.length === 0) {
-                // stepOneNextButton.disabled = "true";
-            } else {
-                // stepOneNextButton.disabled = "false";
+            stepOneNextButton.disabled = "true";
+            function checkStepOne() {
+                let anyChecked = false;
+                categories.forEach((e) => {
+                    if(e.checked){
+                        anyChecked = true;
+                    }
+                })
+                if(anyChecked){
+                    stepOneNextButton.disabled = false;
+                } else {
+                    stepOneNextButton.disabled = true;
+                }
             }
-            //checked spr
 
+            categories.forEach((e) =>{
+                e.addEventListener("change", checkStepOne)
+            });
 
-            // const stepTwoNextButton = document.getElementById("stepTwoNextButton");
-            // stepTwoNextButton.disabled = "true";
-            // function checkStepTwo() {
-            //     if (quantity.value === "") {
-            //         stepTwoNextButton.disabled = "true";
-            //     } else {
-            //         stepTwoNextButton.disabled = "false";
-            //     }
-            // }
-            // quantity.addEventListener("change", checkStepTwo);
+            const stepTwoNextButton = document.getElementById("stepTwoNextButton");
+
+            function checkStepTwo() {
+                if (quantity.value === "") {
+                    stepTwoNextButton.disabled = true;
+                } else {
+                    stepTwoNextButton.disabled = false;
+                }
+            }
+
+            stepTwoNextButton.disabled = "true";
+            quantity.addEventListener("change", checkStepTwo);
 
             /**
              * Form step four validation
              */
 
-            // const stepFourNextButton = document.getElementById("stepFourNextButton");
-            // const stepFourInputs = [street, city, zipCode, phone, pickUpDate, pickUpTime];
-            // stepFourNextButton.disabled = "true";
-            //
-            // function checkStepFour(){
-            //     if(street.value === "" || city.value === "" || zipCode.value === "" || phone.value === ""
-            //     || pickUpDate.value === "" || pickUpTime.value === ""){
-            //         stepFourNextButton.disabled = "true";
-            //     } else {
-            //         stepFourNextButton.disabled = "false";
-            //     }
-            // }
-            //
-            // stepFourInputs.forEach((el)=>{
-            //     el.addEventListener("change", checkStepFour)
-            // })
+            const stepFourNextButton = document.getElementById("stepFourNextButton");
+            const stepFourInputs = [street, city, zipCode, phone, pickUpDate, pickUpTime];
+            stepFourNextButton.disabled = "true";
+
+            function checkStepFour() {
+                if (street.value === "" || city.value === "" || zipCode.value === "" || phone.value === ""
+                    || pickUpDate.value === "" || pickUpTime.value === "") {
+                    stepFourNextButton.disabled = true;
+                } else {
+                    stepFourNextButton.disabled = false;
+                }
+            }
+
+            stepFourInputs.forEach((el) => {
+                el.addEventListener("change", checkStepFour)
+            })
 
 
             this.slides.forEach(slide => {

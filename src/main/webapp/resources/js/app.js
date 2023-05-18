@@ -176,37 +176,37 @@ document.addEventListener("DOMContentLoaded", function () {
             //checked spr
 
 
+            // const stepTwoNextButton = document.getElementById("stepTwoNextButton");
+            // stepTwoNextButton.disabled = "true";
+            // function checkStepTwo() {
+            //     if (quantity.value === "") {
+            //         stepTwoNextButton.disabled = "true";
+            //     } else {
+            //         stepTwoNextButton.disabled = "false";
+            //     }
+            // }
+            // quantity.addEventListener("change", checkStepTwo);
 
+            /**
+             * Form step four validation
+             */
 
-
-            const stepTwoNextButton = document.getElementById("stepTwoNextButton");
-            stepTwoNextButton.disabled = "true";
-            function checkStepTwo() {
-                if (quantity.value === "") {
-                    stepTwoNextButton.disabled = true;
-                } else {
-                    stepTwoNextButton.disabled = false;
-                }
-            }
-            quantity.addEventListener("change", checkStepTwo);
-
-
-            const stepFourNextButton = document.getElementById("stepFourNextButton");
-            const stepFourInputs = [street, city, zipCode, phone, pickUpDate, pickUpTime];
-            stepFourNextButton.disabled = true;
-
-            function checkStepFour(){
-                if(street.value === "" || city.value === "" || zipCode.value === "" || phone.value === ""
-                || pickUpDate.value === "" || pickUpTime.value === ""){
-                    stepFourNextButton.disabled = true;
-                } else {
-                    stepFourNextButton.disabled = false;
-                }
-            }
-
-            stepFourInputs.forEach((e)=>{
-                e.addEventListener("change", checkStepFour)
-            })
+            // const stepFourNextButton = document.getElementById("stepFourNextButton");
+            // const stepFourInputs = [street, city, zipCode, phone, pickUpDate, pickUpTime];
+            // stepFourNextButton.disabled = "true";
+            //
+            // function checkStepFour(){
+            //     if(street.value === "" || city.value === "" || zipCode.value === "" || phone.value === ""
+            //     || pickUpDate.value === "" || pickUpTime.value === ""){
+            //         stepFourNextButton.disabled = "true";
+            //     } else {
+            //         stepFourNextButton.disabled = "false";
+            //     }
+            // }
+            //
+            // stepFourInputs.forEach((el)=>{
+            //     el.addEventListener("change", checkStepFour)
+            // })
 
 
             this.slides.forEach(slide => {

@@ -1,4 +1,4 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("user")
+                .username("user@user.pl")
                 .password("password")
                 .roles("USER")
                 .build();
@@ -32,10 +32,12 @@ public class SecurityConfig {
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/").authenticated()
-                .and().formLogin();
-//                .loginPage("/login")
-//                .defaultSuccessUrl("/");
+                .antMatchers("/").permitAll()
+                .antMatchers("/form").authenticated()
+                .and().formLogin().loginPage("/login")
+                .and().logout().logoutSuccessUrl("/")
+                .permitAll()
+                .and().exceptionHandling().accessDeniedPage("/403");
 
         return http.build();
     }
